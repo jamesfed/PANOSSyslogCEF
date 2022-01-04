@@ -14,6 +14,14 @@ This repo looks to help with this problem by providing simplified CEF templates 
 * Anything Container related
 * Session Owner
 
+## Threat
+* Device Group Hierarchy
+* Source/Destination VM UUID
+* Tunnel ID/IMSI
+* Monitor Tag/IMEI
+* SCTP
+* Anything Container related
+
 # Why CEF instead of plain old syslog?
 CEF includes metadata to help your logging service/SIEM parse the information without using complex extractors (looking at you https://github.com/jamesfed/PANOSGraylogExtractor). 
 # Contributing
