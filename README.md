@@ -3,7 +3,7 @@ Palo Alto Networks Next Generation Firewalls support sending logs (via a custom 
 
 This repo looks to help with this problem by providing simplified CEF templates with a subset of the fields that I've found useful in deployments in the past. Note that it's targeted at PAN-OS 10.1 and some fields may not exist in earlier releases. You should also examine the list of fields to ensure I haven't skipped over any that you would find useful in your own deployments.
 
-# Escaping
+# ⚠️ Escaping
 In particular when shipping URL logs it's very likely you'll bump into issues without configuring escaping on the 'Custom Log Format' tab. Make sure you tick the 'Escaping' box and set Escaped Characters to = with the Escape Character as \.
 
 # Notable exclusions
