@@ -45,6 +45,9 @@ PAN firewalls won't allow a custom syslog profile to have more than 2048 charact
 ## System
 * Device Group Hierarchy ($dg_hier_level_1 - $dg_hier_level_4)
 
+## Wildfire
+* Device Group Hierarchy ($dg_hier_level_1 - $dg_hier_level_4)
+
 # Why CEF instead of plain old syslog?
 CEF includes metadata to help your logging service/SIEM parse the information without using complex extractors (looking at you https://github.com/jamesfed/PANOSGraylogExtractor). 
 # Contributing
