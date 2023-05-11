@@ -7,23 +7,43 @@ This repo looks to help with this problem by providing simplified CEF templates 
 In particular when shipping URL logs it's very likely you'll bump into issues without configuring escaping on the 'Custom Log Format' tab. Make sure you tick the 'Escaping' box and set Escaped Characters to = with the Escape Character as \\.
 
 # Notable exclusions
+PAN firewalls won't allow a custom syslog profile to have more than 2048 characters per log type, to meet this requirement I have omitted the following fields.
+
 ## Traffic
-* Device Group Hierarchy
-* Source/Destination VM UUID
-* Tunnel ID/IMSI
-* Monitor Tag/IMEI
-* SCTP
+* Device Group Hierarchy ($dg_hier_level_1 - $dg_hier_level_4)
+* Source/Destination VM UUID ($src_uuid and $dst_uuid)
+* Tunnel ID/IMSI ($tunnelid)
+* Monitor Tag/IMEI ($monitortag)
+* SCTP ($assoc_id)
 * Anything SD-WAN related
 * Anything Container related
 * Session Owner
 
 ## Threat
-* Device Group Hierarchy
-* Source/Destination VM UUID
-* Tunnel ID/IMSI
-* Monitor Tag/IMEI
-* SCTP
+* Device Group Hierarchy ($dg_hier_level_1 - $dg_hier_level_4)
+* Source/Destination VM UUID ($src_uuid and $dst_uuid)
+* Tunnel ID/IMSI ($tunnelid)
+* Monitor Tag/IMEI ($monitortag)
+* SCTP ($assoc_id)
 * Anything Container related
+
+## URL
+* Device Group Hierarchy ($dg_hier_level_1 - $dg_hier_level_4)
+* Source/Destination VM UUID ($src_uuid and $dst_uuid)
+* Tunnel ID/IMSI ($tunnelid)
+* Monitor Tag/IMEI ($monitortag)
+* SCTP ($assoc_id)
+* Anything Container related ($container_id)
+* PCAP ID ($pcap_id)
+* Tunnel Type ($tunnel)
+* Anything POD related ($pod_namespace and $pod_name)
+* Slice Service Type ($nssai_sst)
+* Rule UUID ($rule_uuid)
+* Sequence number ($seqno)
+* Action Flags ($actionflags)
+
+## System
+* Device Group Hierarchy ($dg_hier_level_1 - $dg_hier_level_4)
 
 # Why CEF instead of plain old syslog?
 CEF includes metadata to help your logging service/SIEM parse the information without using complex extractors (looking at you https://github.com/jamesfed/PANOSGraylogExtractor). 
