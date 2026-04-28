@@ -54,6 +54,11 @@ PAN firewalls won't allow a custom syslog profile to have more than 2048 charact
 ## GlobalProtect
 Although no exclusions were made the format differs from the document provided by PAN (which doesn't seem to work out of the box). I welcome feedback on this one!
 
+## Decryption
+Similar to GlobalProtect the document provided by PAN doesn't work out of the box.
+* Source/Destination VM UUID ($src_uuid and $dst_uuid)
+* Tunnel ID/IMSI ($tunnelid)
+
 # Why CEF instead of plain old syslog?
 CEF includes metadata to help your logging service/SIEM parse the information without using complex extractors (looking at you https://github.com/jamesfed/PANOSGraylogExtractor). 
 # Contributing
